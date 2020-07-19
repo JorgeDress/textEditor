@@ -34,7 +34,7 @@ public class mainFrame extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabPane = new javax.swing.JTabbedPane();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -59,7 +59,7 @@ public class mainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTabbedPane1.addTab("NewFile.txt", jTabbedPane2);
+        tabPane.addTab("NewFile.txt", jTabbedPane2);
 
         jMenu1.setText("File");
 
@@ -134,11 +134,11 @@ public class mainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)
+            .addComponent(tabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 807, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+            .addComponent(tabPane, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
         );
 
         pack();
@@ -146,30 +146,26 @@ public class mainFrame extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        String[] argss; 
-        argss = new String[]{"new"};
-        com.jorgedress.texteditor.main.fileActions.main(argss);
+        
+        com.jorgedress.texteditor.main.fileActions.newFile();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-        String[] argss; 
-        argss = new String[]{"exit"};
-        com.jorgedress.texteditor.main.fileActions.main(argss);
+        
+        com.jorgedress.texteditor.main.fileActions.exit(false);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        String[] argss; 
-        argss = new String[]{"close"};
-        com.jorgedress.texteditor.main.fileActions.main(argss);
+        
+        com.jorgedress.texteditor.main.fileActions.closeFile();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        String[] argss; 
-        argss = new String[]{"save"};
-        com.jorgedress.texteditor.main.fileActions.main(argss);
+        
+        com.jorgedress.texteditor.main.fileActions.saveFile();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
@@ -224,7 +220,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
+    public static javax.swing.JTabbedPane jTabbedPane2;
+    public static javax.swing.JTabbedPane tabPane;
     // End of variables declaration//GEN-END:variables
 }

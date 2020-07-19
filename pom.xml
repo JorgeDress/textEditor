@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jorgedress</groupId>
     <artifactId>textEditor</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.1.1-BETA</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -46,4 +46,6 @@
             
         </plugins>
     </build>
+    <name>Text Editor</name>
+    <description>Simple java written text editor [BETA-PHASE]</description>
 </project>

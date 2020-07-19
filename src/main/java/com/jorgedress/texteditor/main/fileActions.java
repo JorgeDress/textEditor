@@ -5,14 +5,29 @@
  */
 package com.jorgedress.texteditor.main;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  *
  * @author jorge
  */
 public class fileActions extends com.jorgedress.texteditor.main.mainFrame {
+    
+    public static int fileNumber;
+    public String aatitle;
+    public static String atitle;
+    public static JTabbedPane newtbp;
+    
+        public fileActions() {
+            fileNumber = 0+tabPane.getTabCount();
+            aatitle = "HII";
+            atitle = aatitle.toString();
+            newtbp = new JTabbedPane();
+        }
+    
     public static void newFile() {
+        System.out.println(atitle);
+        tabPane.add(atitle, newtbp);
         
     }
     public static void closeFile() {
@@ -44,26 +59,6 @@ public class fileActions extends com.jorgedress.texteditor.main.mainFrame {
         }
     }
     public static void main(String[] args) {
-        switch (args.toString()) {
-                case "new":
-                    newFile();
-                    break;
-                case "exit":
-                    exit(true);
-                    break;
-                case "save":
-                    saveFile();
-                    break;
-                case "close":
-                    closeFile();
-                    break;
-                default:
-                    JOptionPane.showMessageDialog(null,
-                            "There was an error. Please report it in GitHub (Under Help, About, GitHub Project Page).",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE
-                            );
-                    break;
-        }
+        
     }
 }
