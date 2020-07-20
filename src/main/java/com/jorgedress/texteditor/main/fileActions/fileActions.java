@@ -3,38 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.jorgedress.texteditor.main;
+package com.jorgedress.texteditor.main.fileActions;
 
+import com.jorgedress.texteditor.main.mainFrame.*;
+import java.io.File;
+import java.io.FileFilter;
 import javax.swing.*;
 
 /**
  *
  * @author jorge
  */
-public class fileActions extends com.jorgedress.texteditor.main.mainFrame {
+public class fileActions extends com.jorgedress.texteditor.main.mainFrame implements FileFilter {
 
     
-    
+    static int totalTabs = mainTabPane.getTabCount()+1;
     //public static int fileNumber;
-    public static String atitle;
+    public static String atitle = "NewFile("+totalTabs+").txt";
     //public static String atitle;
     public static JTabbedPane lasttbp;
+    public static JScrollPane scrollPane;
+    public static JTextArea newTArea;
     
-
-    public fileActions() {
+    
+    public static void openFile() {
         
-        
-    }
-
-    public static void newFile() {
-        int filesOpened = tabPane.indexOfTab(atitle);
-        atitle = "NewFile("+(filesOpened+1)+").txt";
-        lasttbp = new JTabbedPane();
-        System.out.println(atitle);
-        tabPane.add(atitle, lasttbp);
-        filesOpened++;
-        
-
     }
 
     public static void closeFile() {
@@ -42,7 +35,7 @@ public class fileActions extends com.jorgedress.texteditor.main.mainFrame {
     }
 
     public static void saveFile() {
-
+        
     }
 
     public static void exit(boolean Saved) {
@@ -70,5 +63,10 @@ public class fileActions extends com.jorgedress.texteditor.main.mainFrame {
 
     public static void main(String[] args) {
 
+    }
+
+    @Override
+    public boolean accept(File file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

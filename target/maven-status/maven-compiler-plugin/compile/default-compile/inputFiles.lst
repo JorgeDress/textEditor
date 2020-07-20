@@ -1,2 +1,5 @@
 /home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/mainFrame.java
-/home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/fileActions.java
+/home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/fileActions/newFile.java
+/home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/writer/FileWrite.java
+/home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/fileActions/saveFile.java
+/home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/fileActions/fileActions.java

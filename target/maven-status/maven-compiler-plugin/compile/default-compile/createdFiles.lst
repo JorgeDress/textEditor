@@ -1,7 +1,13 @@
-com/jorgedress/texteditor/main/fileActions.class
-com/jorgedress/texteditor/main/mainFrame$2.class
-com/jorgedress/texteditor/main/mainFrame$4.class
+com/jorgedress/texteditor/main/writer/FileWrite.class
+com/jorgedress/texteditor/main/mainFrame$6.class
 com/jorgedress/texteditor/main/mainFrame$1.class
 com/jorgedress/texteditor/main/mainFrame$5.class
+com/jorgedress/texteditor/main/fileActions/newFile.class
+com/jorgedress/texteditor/main/fileActions/saveFile.class
+com/jorgedress/texteditor/main/mainFrame$8.class
+com/jorgedress/texteditor/main/mainFrame$2.class
+com/jorgedress/texteditor/main/mainFrame$4.class
+com/jorgedress/texteditor/main/mainFrame$7.class
+com/jorgedress/texteditor/main/fileActions/fileActions.class
 com/jorgedress/texteditor/main/mainFrame$3.class
 com/jorgedress/texteditor/main/mainFrame.class
