@@ -13,22 +13,27 @@ import javax.swing.*;
  */
 public class fileActions extends com.jorgedress.texteditor.main.mainFrame {
 
-    public static int filesOpened = 1;
+    
+    
     //public static int fileNumber;
-    public static String atitle = "NewFile("+(filesOpened+1)+").txt";
+    public static String atitle;
     //public static String atitle;
-    //public static JTabbedPane newtbp;
+    public static JTabbedPane lasttbp;
+    
 
     public fileActions() {
-        //fileNumber = 0 + tabPane.getTabCount();
-        //aatitle = "HII";
-        //atitle = aatitle;
-        //newtbp = new JTabbedPane();
+        
+        
     }
 
     public static void newFile() {
+        int filesOpened = tabPane.indexOfTab(atitle);
+        atitle = "NewFile("+(filesOpened+1)+").txt";
+        lasttbp = new JTabbedPane();
         System.out.println(atitle);
-        //tabPane.add(atitle, newtbp);
+        tabPane.add(atitle, lasttbp);
+        filesOpened++;
+        
 
     }
 
