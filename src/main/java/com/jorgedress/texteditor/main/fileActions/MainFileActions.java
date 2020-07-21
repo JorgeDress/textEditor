@@ -5,7 +5,7 @@
  */
 package com.jorgedress.texteditor.main.fileActions;
 
-import com.jorgedress.texteditor.main.mainFrame.*;
+import com.jorgedress.texteditor.main.MainFrame.*;
 import java.io.File;
 import java.io.FileFilter;
 import javax.swing.*;
@@ -14,7 +14,7 @@ import javax.swing.*;
  *
  * @author jorge
  */
-public class fileActions extends com.jorgedress.texteditor.main.mainFrame implements FileFilter {
+public class MainFileActions extends com.jorgedress.texteditor.main.MainFrame implements FileFilter {
 
     
     static int totalTabs = mainTabPane.getTabCount()+1;
@@ -24,25 +24,12 @@ public class fileActions extends com.jorgedress.texteditor.main.mainFrame implem
     public static JTabbedPane lasttbp;
     public static JScrollPane scrollPane;
     public static JTextArea newTArea;
-    
-    
-    public static void openFile() {
-        
-    }
-
-    public static void closeFile() {
-
-    }
-
-    public static void saveFile() {
-        
-    }
 
     public static void exit(boolean Saved) {
         if (!Saved) {
 
             int jopResult = JOptionPane.showOptionDialog(null,
-                    "There are not saved changes, if you close the file you will lose them."
+                    "There are not saved changes,\n if you close the file you will lose them.\n"
                     + "Are you sure do you want to exit?",
                     "Warning",
                     JOptionPane.YES_NO_OPTION,
@@ -54,6 +41,11 @@ public class fileActions extends com.jorgedress.texteditor.main.mainFrame implem
                     break;
                 case JOptionPane.NO_OPTION:
                     JOptionPane.getRootFrame().dispose();
+                    break;
+                default:
+                    JOptionPane.getRootFrame().dispose();
+                    break;
+                    
             }
 
         } else {

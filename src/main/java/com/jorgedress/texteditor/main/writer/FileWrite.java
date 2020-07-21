@@ -11,25 +11,44 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.jorgedress.texteditor.main.fileActions.saveFile;
+import com.jorgedress.texteditor.main.fileActions.SaveFile;
+import static com.jorgedress.texteditor.main.MainFrame.mainTabPane;
+import java.awt.Component;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JViewport;
 
 /**
  *
  * @author jorge
  */
-public class FileWrite extends com.jorgedress.texteditor.main.fileActions.saveFile {
+public class FileWrite extends com.jorgedress.texteditor.main.fileActions.SaveFile {
     
     public static void main(String[] args) {
         
-        FileWriter file;
+        FileWriter fileToWrite;
         try {
-            file = new FileWriter(pathToSave);
+            fileToWrite = new FileWriter(pathToSave);
             
-            file.write(pathToSave);
+            //START (behaviour of 'Print text to console')
             
-            file.close();
+            int currentlySelected = mainTabPane.getSelectedIndex();
+            Component currentlySelComp = mainTabPane.getComponent(currentlySelected);
+            String compTitle = mainTabPane.getTitleAt(currentlySelected);
+            String compName = currentlySelComp.getName();
+            int componenentsCount = mainTabPane.getComponentCount();
+            JTextArea textArea;
+            textArea = (JTextArea) (((JViewport) (((JScrollPane) mainTabPane.getComponentAt(currentlySelected)).getViewport()))).getView();
+
+            String textExtracted = textArea.getText();
+            
+            //END
+            
+            fileToWrite.write(textExtracted);
+            
+            fileToWrite.close();
+            
         } catch (IOException ex) {
-            Logger.getLogger(FileWriter.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex);
         }
         

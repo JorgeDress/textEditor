@@ -11,9 +11,9 @@ import javax.swing.*;
  *
  * @author jorge
  */
-public class newFile extends com.jorgedress.texteditor.main.mainFrame {
+public class NewFile extends com.jorgedress.texteditor.main.MainFrame {
     
-    public newFile() {
+    public NewFile() {
     
         //newFileScr.setName(defaultTitle);
         
@@ -24,6 +24,10 @@ public class newFile extends com.jorgedress.texteditor.main.mainFrame {
         int fileNumber = mainTabPane.getTabCount();
         String defaultTitle = "NewFile(" +  fileNumber  + ").txt";
         
+        if (defaultTitle.equals("NewFile(0).txt")) {
+            defaultTitle = "NewFile.txt";
+        }
+        
         JTextArea txtArea = new JTextArea();
         
         JScrollPane newFileScr = new JScrollPane();
@@ -33,8 +37,8 @@ public class newFile extends com.jorgedress.texteditor.main.mainFrame {
         mainTabPane.add(defaultTitle, newFileScr);
         
         
-        System.out.println(fileNumber);
-        System.out.println(defaultTitle);
+        System.out.println("Created file with index: "+fileNumber);
+        System.out.println("Default title: "+defaultTitle);
         
     }
     

@@ -5,8 +5,9 @@
  */
 package com.jorgedress.texteditor.main;
 
-import com.jorgedress.texteditor.main.fileActions.fileActions;
+import com.jorgedress.texteditor.main.fileActions.MainFileActions;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JViewport;
@@ -15,12 +16,12 @@ import javax.swing.JViewport;
  *
  * @author jorge
  */
-public class mainFrame extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form mainFrame
      */
-    public mainFrame() {
+    public MainFrame() {
         initComponents();
         this.setLocationRelativeTo(null);
         
@@ -198,25 +199,44 @@ public class mainFrame extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         
-        com.jorgedress.texteditor.main.fileActions.newFile.main(null);
+        com.jorgedress.texteditor.main.fileActions.NewFile.main(null);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-        
-        com.jorgedress.texteditor.main.fileActions.fileActions.exit(false);
+        com.jorgedress.texteditor.main.fileActions.MainFileActions.exit(false);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         
-        com.jorgedress.texteditor.main.fileActions.fileActions.closeFile();
+        int selectedIndex = mainTabPane.getSelectedIndex();
+        Component selComp = mainTabPane.getComponent(selectedIndex);
+        
+        int jopResult = JOptionPane.showOptionDialog(null,
+                    "There are not saved changes,\n if you close the file you will lose them.\n"
+                    + "Are you sure do you want to exit?",
+                    "Warning",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.YES_NO_OPTION, null, null, null);
+        
+        switch (jopResult) {
+                case JOptionPane.YES_OPTION:
+                    mainTabPane.remove(selectedIndex);
+                    break;
+                case JOptionPane.NO_OPTION:
+                    JOptionPane.getRootFrame().dispose();
+                    break;
+                default:
+                    JOptionPane.getRootFrame().dispose();
+                    break;
+        }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         
-        com.jorgedress.texteditor.main.fileActions.saveFile.main(null);
+        com.jorgedress.texteditor.main.fileActions.SaveFile.main(null);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
@@ -229,16 +249,15 @@ public class mainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         int currentlySelected = mainTabPane.getSelectedIndex();
         Component currentlySelComp = mainTabPane.getComponent(currentlySelected);
+        String compTitle = mainTabPane.getTitleAt(currentlySelected);
         String compName = currentlySelComp.getName();
-        Component currentlySelCompInside = currentlySelComp.getComponentAt(0, 0);
+        int componenentsCount = mainTabPane.getComponentCount();
+        JTextArea textArea;
+        textArea = (JTextArea) (((JViewport) (((JScrollPane) mainTabPane.getComponentAt(currentlySelected)).getViewport()))).getView();
         
-        //JScrollPane theScrollPane; 
-        //theScrollPane = currentlySelComp;
-        
-        System.out.println("Currently selected: "+currentlySelected);
-        System.out.println("Currently selected: "+currentlySelComp);
-        System.out.println("Currently selected: "+currentlySelCompInside);
-        System.out.println("Text: ["+"]");
+        System.out.println("Currently selected index: "+currentlySelected+" out of "+componenentsCount);
+        System.out.println("Currently selected title: "+compTitle);
+        System.out.println("Text: ["+textArea.getText()+"]");
         
          
     }//GEN-LAST:event_jMenuItem14ActionPerformed
@@ -264,20 +283,21 @@ public class mainFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainFrame().setVisible(true);
+                new MainFrame().setVisible(true);
             }
         });
     }

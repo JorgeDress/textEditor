@@ -2,6 +2,17 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.2.2
+
+General bug fix update
+
+- Changed name files to uppercase (Only first letter)
+- Fixed: get text of JTextArea inside of JScrollPane inside of JTabbedPane
+- Compiled in JDK 1.8 (added retrocompatibility)
+- Fixed File Names
+- Fixed file name 0 when closing default
+- Completely written Save and Write methods, but not linked
+
 ## Beta 0.2.1
 
 Readme updated
