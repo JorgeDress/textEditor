@@ -35,6 +35,8 @@ public class SaveFile {
         
         folderChooser.setFileFilter(textFilter);
         
+        
+        
         int returnVal = folderChooser.showSaveDialog(null);
         
         if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -54,17 +56,17 @@ public class SaveFile {
             if (!pathToSave.toLowerCase().endsWith(".txt")) {
                 fixedPath = pathToSave + ".txt";
             } else {
-                fixedPath=pathToSave;
+                fixedPath=pathToSave+".txt";
             }
             
             System.out.println("Selected file name: "+fileName);
             
-            System.out.println("Writing file "+selectedDir.getName());       
+            System.out.println("Writing file "+fixedPath);       
             
             
             System.out.println("To path "+selDirString);
             
-            com.jorgedress.texteditor.main.writer.FileWrite.main(null);
+            com.jorgedress.texteditor.main.writerAndReader.FileWrite.main(null);
             
             //com.jorgedress.texteditor.main.writer.FileWrite.main(null);
             

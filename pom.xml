@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jorgedress</groupId>
     <artifactId>textEditor</artifactId>
-    <version>0.2.3-BETA</version>
+    <version>0.3.0-BETA</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
     <build>
@@ -23,11 +23,14 @@
 				  <archive>
 					<manifest>
 
-						<mainClass>com.jorgedress.texteditor.main.mainFrame</mainClass>
+						<mainClass>com.jorgedress.texteditor.main.MainFrame</mainClass>
 					</manifest>
 				  </archive>
 				</configuration>
             </plugin>
+            
+            
+            
             
             <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -45,9 +48,24 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+   <groupId>com.akathist.maven.plugins.launch4j</groupId>
+   <artifactId>launch4j-maven-plugin</artifactId>
+   <version>1.7.25</version>
+</plugin>
             
         </plugins>
     </build>
     <name>Text Editor</name>
     <description>Simple java written text editor [BETA-PHASE]</description>
+    <dependencies>
+        
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>

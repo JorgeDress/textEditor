@@ -4,7 +4,7 @@
   <groupId>com.jorgedress</groupId>
   <artifactId>textEditor</artifactId>
   <name>Text Editor</name>
-  <version>0.1.4-BETA</version>
+  <version>0.3.0-BETA</version>
   <description>Simple java written text editor [BETA-PHASE]</description>
   <build>
     <plugins>
@@ -14,7 +14,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.jorgedress.texteditor.main.mainFrame</mainClass>
+              <mainClass>com.jorgedress.texteditor.main.MainFrame</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -32,11 +32,16 @@
         </executions>
         <configuration />
       </plugin>
+      <plugin>
+        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+        <artifactId>launch4j-maven-plugin</artifactId>
+        <version>1.7.25</version>
+      </plugin>
     </plugins>
   </build>
   <properties>
-    <maven.compiler.target>11</maven.compiler.target>
-    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 </project>

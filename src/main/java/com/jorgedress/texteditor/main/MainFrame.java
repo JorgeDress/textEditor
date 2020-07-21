@@ -6,6 +6,7 @@
 package com.jorgedress.texteditor.main;
 
 import com.jorgedress.texteditor.main.fileActions.MainFileActions;
+import static com.jorgedress.texteditor.main.fileActions.SaveFile.fixedPath;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
@@ -18,6 +19,8 @@ import javax.swing.JViewport;
  */
 public class MainFrame extends javax.swing.JFrame {
 
+    public static boolean Saved = false;
+    
     /**
      * Creates new form mainFrame
      */
@@ -153,6 +156,11 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu6.setText("Developing");
 
         jMenuItem12.setText("Clear");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem12);
 
         jMenuItem13.setText("Get selected tab index");
@@ -209,34 +217,30 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+        int currentlySelected = mainTabPane.getSelectedIndex();
+        Component currentlySelComp = mainTabPane.getComponent(currentlySelected);
+        String compTitle = mainTabPane.getTitleAt(currentlySelected);
+        String compName = currentlySelComp.getName();
+        int componenentsCount = mainTabPane.getComponentCount();
+        JTextArea textArea;
+        textArea = (JTextArea) (((JViewport) (((JScrollPane) mainTabPane.getComponentAt(currentlySelected)).getViewport()))).getView();
         
-        int selectedIndex = mainTabPane.getSelectedIndex();
-        Component selComp = mainTabPane.getComponent(selectedIndex);
-        
-        int jopResult = JOptionPane.showOptionDialog(null,
-                    "There are not saved changes,\n if you close the file you will lose them.\n"
-                    + "Are you sure do you want to exit?",
-                    "Warning",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.YES_NO_OPTION, null, null, null);
-        
-        switch (jopResult) {
-                case JOptionPane.YES_OPTION:
-                    mainTabPane.remove(selectedIndex);
-                    break;
-                case JOptionPane.NO_OPTION:
-                    JOptionPane.getRootFrame().dispose();
-                    break;
-                default:
-                    JOptionPane.getRootFrame().dispose();
-                    break;
+        if (Saved == true) {
+            com.jorgedress.texteditor.main.fileActions.changesManager.ChangesManager.proveSaved(textArea.getText(), com.jorgedress.texteditor.main.fileActions.SaveFile.fixedPath);
+        } else {
+            com.jorgedress.texteditor.main.fileActions.changesManager.ChangesManager.proveNotSaved();
         }
+        
+        
+        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         
         com.jorgedress.texteditor.main.fileActions.SaveFile.main(null);
+        
+        Saved = true;
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
@@ -265,6 +269,19 @@ public class MainFrame extends javax.swing.JFrame {
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        int currentlySelected = mainTabPane.getSelectedIndex();
+        Component currentlySelComp = mainTabPane.getComponent(currentlySelected);
+        String compTitle = mainTabPane.getTitleAt(currentlySelected);
+        String compName = currentlySelComp.getName();
+        int componenentsCount = mainTabPane.getComponentCount();
+        JTextArea textArea;
+        textArea = (JTextArea) (((JViewport) (((JScrollPane) mainTabPane.getComponentAt(currentlySelected)).getViewport()))).getView();
+        
+        textArea.setText("");
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,7 +335,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    public static javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;

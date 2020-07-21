@@ -1,12 +1,16 @@
 com/jorgedress/texteditor/main/MainFrame.class
 com/jorgedress/texteditor/main/MainFrame$5.class
-com/jorgedress/texteditor/main/writer/FileWrite.class
 com/jorgedress/texteditor/main/MainFrame$4.class
 com/jorgedress/texteditor/main/fileActions/NewFile.class
+com/jorgedress/texteditor/main/MainFrame$9.class
 com/jorgedress/texteditor/main/MainFrame$8.class
 com/jorgedress/texteditor/main/MainFrame$2.class
+com/jorgedress/texteditor/main/writerAndReader/FileWrite.class
 com/jorgedress/texteditor/main/MainFrame$1.class
+com/jorgedress/texteditor/main/fileActions/changesManager/FileRead1.class
+com/jorgedress/texteditor/main/writerAndReader/FileRead.class
 com/jorgedress/texteditor/main/fileActions/SaveFile.class
+com/jorgedress/texteditor/main/fileActions/changesManager/ChangesManager.class
 com/jorgedress/texteditor/main/MainFrame$3.class
 com/jorgedress/texteditor/main/MainFrame$6.class
 com/jorgedress/texteditor/main/fileActions/MainFileActions.class

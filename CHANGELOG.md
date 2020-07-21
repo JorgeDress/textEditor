@@ -2,6 +2,15 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.3.0
+
+Major Update
+
+- Changes manager, that quests specifical questions depending on state of file (Not saved, Saved, Saved with now saved changes.)
+- Added FileRead class (not working)
+- Fixed mainClass not found (error caused by the file name change
+- [UNDER DEVELOPMENT] Compilating too in .exe (Windows only). Soon compilating in .deb
+
 ## Beta 0.2.3
 
 Major bug fix update
