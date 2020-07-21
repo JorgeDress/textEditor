@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jorgedress</groupId>
     <artifactId>textEditor</artifactId>
-    <version>0.2.2-BETA</version>
+    <version>0.2.3-BETA</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

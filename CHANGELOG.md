@@ -2,6 +2,13 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.2.3
+
+Major bug fix update
+
+- Files now can be named without the ".txt", they will be saved with it
+- In interface, when files are saved, the tab title also changes.
+
 ## Beta 0.2.2
 
 General bug fix update

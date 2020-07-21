@@ -45,7 +45,6 @@ public class MainFileActions extends com.jorgedress.texteditor.main.MainFrame im
                 default:
                     JOptionPane.getRootFrame().dispose();
                     break;
-                    
             }
 
         } else {

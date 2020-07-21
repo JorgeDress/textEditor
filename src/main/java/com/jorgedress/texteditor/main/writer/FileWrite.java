@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 
 import com.jorgedress.texteditor.main.fileActions.SaveFile;
 import static com.jorgedress.texteditor.main.MainFrame.mainTabPane;
+import com.jorgedress.texteditor.main.fileActions.SaveFile;
 import java.awt.Component;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -28,7 +29,7 @@ public class FileWrite extends com.jorgedress.texteditor.main.fileActions.SaveFi
         
         FileWriter fileToWrite;
         try {
-            fileToWrite = new FileWriter(pathToSave);
+            fileToWrite = new FileWriter(fixedPath);
             
             //START (behaviour of 'Print text to console')
             
@@ -45,6 +46,14 @@ public class FileWrite extends com.jorgedress.texteditor.main.fileActions.SaveFi
             //END
             
             fileToWrite.write(textExtracted);
+            
+            String oldTitle =currentlySelComp.getName();
+            
+            System.out.println("Default file title: "+oldTitle);
+            
+            mainTabPane.setTitleAt(currentlySelected, fixedFileName);
+            
+            System.out.println("Replaced with: "+fixedFileName);
             
             fileToWrite.close();
             

@@ -20,6 +20,9 @@ public class SaveFile {
 
         
        public static String pathToSave; 
+       public static String fileName;
+       public static String fixedFileName;
+       public static String fixedPath;
 
     
     public static void main(String[] args) {
@@ -39,14 +42,29 @@ public class SaveFile {
             File selectedDir = folderChooser.getSelectedFile();
             
             String selDirString = selectedDir.toPath().toString();
-            
-            System.out.println("Writing file "+selectedDir.getName());       
+            fileName = selectedDir.getName();
             
             pathToSave = selDirString;
             
+            if (!fileName.toLowerCase().endsWith(".txt")) {
+                fixedFileName = fileName.trim() +".txt";
+            } else {
+                fixedFileName = fileName;
+            }
+            if (!pathToSave.toLowerCase().endsWith(".txt")) {
+                fixedPath = pathToSave + ".txt";
+            } else {
+                fixedPath=pathToSave;
+            }
+            
+            System.out.println("Selected file name: "+fileName);
+            
+            System.out.println("Writing file "+selectedDir.getName());       
+            
+            
             System.out.println("To path "+selDirString);
             
-            
+            com.jorgedress.texteditor.main.writer.FileWrite.main(null);
             
             //com.jorgedress.texteditor.main.writer.FileWrite.main(null);
             
