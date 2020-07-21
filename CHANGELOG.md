@@ -2,6 +2,10 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.2.1
+
+Readme updated
+
 ## Beta 0.2.0
 
 Major update:
