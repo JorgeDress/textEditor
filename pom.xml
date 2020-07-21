@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jorgedress</groupId>
     <artifactId>textEditor</artifactId>
-    <version>0.3.0-BETA</version>
+    <version>0.3.1-BETA</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,8 +29,90 @@
 				</configuration>
             </plugin>
             
+            <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>1.4</version>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>shade</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <shadedArtifactAttached>true</shadedArtifactAttached> <!-- Make the shaded artifact not the main one -->
+        <shadedClassifierName>shaded</shadedClassifierName> <!-- set the suffix to the shaded jar -->
+    </configuration>
+</plugin>
             
-            
+            <plugin>
+    <groupId>org.bluestemsoftware.open.maven.plugin</groupId>
+    <artifactId>launch4j-plugin</artifactId>
+    <version>1.5.0.0</version>
+    <executions>
+
+        <!-- GUI exe -->
+        <execution>
+            <id>l4j-gui</id>
+            <phase>package</phase>
+            <goals>
+                <goal>launch4j</goal>
+            </goals>
+            <configuration>
+                <headerType>gui</headerType>
+                <outfile>target/${artifactId}-${version}-interface.exe</outfile>
+                <jar>target/${artifactId}-${version}-shaded.jar</jar> <!-- 'shaded' is the value set on shadedClassifierName above -->
+                <errTitle>App Err</errTitle>
+                <classPath>
+                    <mainClass>package.AppGUI</mainClass>
+                </classPath>
+                <jre>
+                    <minVersion>1.8.0</minVersion>
+                    <initialHeapSize>128</initialHeapSize>
+                    <maxHeapSize>1024</maxHeapSize>
+                </jre>
+                <versionInfo>
+                    <fileVersion>0.3.1.0</fileVersion>
+                    <txtFileVersion>0.3.1.0</txtFileVersion>
+                    <fileDescription>Desc</fileDescription>
+                    <copyright>C</copyright>
+                    <productVersion>0.3.1.0</productVersion>
+                    <txtProductVersion>0.3.1.0</txtProductVersion>
+                    <productName>Product</productName>
+                    <internalName>Product</internalName>
+                    <originalFilename>App.exe</originalFilename>
+                </versionInfo>
+            </configuration>
+        </execution>
+
+        <!-- Command-line exe -->
+        <execution>
+            <id>l4j-cli</id>
+            <phase>package</phase>
+            <goals>
+                <goal>launch4j</goal>
+            </goals>
+            <configuration>
+                <headerType>console</headerType>
+                <outfile>target/${artifactId}-${version}-console.exe</outfile>
+                <jar>target/${artifactId}-${version}-shaded.jar</jar> <!-- 'shaded' is the value set on shadedClassifierName above -->
+                <errTitle>App Err</errTitle>
+                <classPath>
+                    <mainClass>package.AppCLI</mainClass>
+                </classPath>
+                
+                <jre>
+                    <minVersion>1.8.0</minVersion>
+                    
+                    <initialHeapSize>128</initialHeapSize>
+                    <maxHeapSize>1024</maxHeapSize>
+                </jre>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
             
             <plugin>
         <groupId>org.apache.maven.plugins</groupId>

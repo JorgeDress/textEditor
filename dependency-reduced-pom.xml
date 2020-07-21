@@ -4,7 +4,7 @@
   <groupId>com.jorgedress</groupId>
   <artifactId>textEditor</artifactId>
   <name>Text Editor</name>
-  <version>0.3.0-BETA</version>
+  <version>0.3.1-BETA</version>
   <description>Simple java written text editor [BETA-PHASE]</description>
   <build>
     <plugins>
@@ -18,6 +18,40 @@
             </manifest>
           </archive>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+        <artifactId>launch4j-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>l4j-clui</id>
+            <phase>install</phase>
+            <goals>
+              <goal>launch4j</goal>
+            </goals>
+            <configuration>
+              <headerType>console</headerType>
+              <jar>target/textEditor-0.3.0-BETA.jar</jar>
+              <outfile>target/textEditor-0.3.0-BETA.exe</outfile>
+              <errTitle>textEditor</errTitle>
+              <jre>
+                <path>jre</path>
+              </jre>
+              <versionInfo>
+                <fileVersion>0.3.1.0</fileVersion>
+                <txtFileVersion>0.3.1.0</txtFileVersion>
+                <fileDescription>Simple java written text editor [BETA-PHASE]</fileDescription>
+                <copyright>Copyright 2020 JorgeDress</copyright>
+                <productVersion>0.3.1.0</productVersion>
+                <txtProductVersion>0.3.1.0</txtProductVersion>
+                <productName>textEditor</productName>
+                <companyName>JorgeDress</companyName>
+                <internalName>textEditor</internalName>
+                <originalFilename>textEditor-0.3.1-BETA.exe</originalFilename>
+              </versionInfo>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>

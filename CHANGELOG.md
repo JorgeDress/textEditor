@@ -2,6 +2,13 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.3.1
+
+Bug fix update
+
+- Fixed .exe files
+- Created 2 .exes: one in console and cone in terminal
+
 ## Beta 0.3.0
 
 Major Update
