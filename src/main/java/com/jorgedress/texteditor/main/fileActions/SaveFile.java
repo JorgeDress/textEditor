@@ -48,7 +48,7 @@ public class SaveFile {
             
             pathToSave = selDirString;
             
-            if (!fileName.toLowerCase().endsWith(".txt")) {
+            if (fileName.toLowerCase().endsWith(".txt")==false) {
                 fixedFileName = fileName.trim() +".txt";
             } else {
                 fixedFileName = fileName;
@@ -56,7 +56,7 @@ public class SaveFile {
             if (!pathToSave.toLowerCase().endsWith(".txt")) {
                 fixedPath = pathToSave + ".txt";
             } else {
-                fixedPath=pathToSave+".txt";
+                fixedPath = pathToSave;
             }
             
             System.out.println("Selected file name: "+fileName);

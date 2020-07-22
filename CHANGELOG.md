@@ -2,6 +2,17 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.4.0
+
+Major Update
+
+- [UNDER DEVELOPMENT] Configuration section added:
+    - Customizable accent color
+    - Optional dark mode
+    - Developing menu hidden by default
+    - Account and cloud login and register
+- Removed .exe due problems with the bundled JRE
+
 ## Beta 0.3.2
 
 Minor features adding update

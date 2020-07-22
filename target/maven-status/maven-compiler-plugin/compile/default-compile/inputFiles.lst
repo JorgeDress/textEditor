@@ -1,5 +1,7 @@
 /home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/fileActions/changesManager/ChangesManager.java
+/home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/configs/config.java
 /home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/writerAndReader/FileRead.java
+/home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/configs/colorChooser.java
 /home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/writerAndReader/FileWrite.java
 /home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/fileActions/MainFileActions.java
 /home/jorge/Escritorio/Proyectos/textEditor/src/main/java/com/jorgedress/texteditor/main/fileActions/NewFile.java

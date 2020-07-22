@@ -7,7 +7,11 @@ package com.jorgedress.texteditor.main;
 
 import com.jorgedress.texteditor.main.fileActions.MainFileActions;
 import static com.jorgedress.texteditor.main.fileActions.SaveFile.fixedPath;
+import java.awt.Color;
 import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -58,7 +62,8 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        dev = new javax.swing.JMenu();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
@@ -151,9 +156,18 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuItem8.setText("Delete");
         jMenu2.add(jMenuItem8);
 
+        jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem15.setText("Configuration");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem15);
+
         jMenuBar1.add(jMenu2);
 
-        jMenu6.setText("Developing");
+        dev.setText("Developing");
 
         jMenuItem12.setText("Clear");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +175,7 @@ public class MainFrame extends javax.swing.JFrame {
                 jMenuItem12ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem12);
+        dev.add(jMenuItem12);
 
         jMenuItem13.setText("Get selected tab index");
         jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +183,7 @@ public class MainFrame extends javax.swing.JFrame {
                 jMenuItem13ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem13);
+        dev.add(jMenuItem13);
 
         jMenuItem14.setText("Print text in console");
         jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
@@ -177,9 +191,10 @@ public class MainFrame extends javax.swing.JFrame {
                 jMenuItem14ActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem14);
+        dev.add(jMenuItem14);
 
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(dev);
+        dev.setVisible(false);
 
         jMenu4.setText("Help");
 
@@ -234,7 +249,7 @@ public class MainFrame extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-
+    
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         
@@ -286,6 +301,11 @@ public class MainFrame extends javax.swing.JFrame {
         textArea.setText("");
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+        new com.jorgedress.texteditor.main.configs.config().setVisible(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,30 +343,31 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    public static javax.swing.JMenu dev;
+    public static javax.swing.JMenu jMenu1;
+    public static javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    public static javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
+    public static javax.swing.JMenuBar jMenuBar1;
+    public static javax.swing.JMenuItem jMenuItem1;
+    public static javax.swing.JMenuItem jMenuItem10;
+    public static javax.swing.JMenuItem jMenuItem11;
+    public static javax.swing.JMenuItem jMenuItem12;
+    public static javax.swing.JMenuItem jMenuItem13;
+    public static javax.swing.JMenuItem jMenuItem14;
+    public static javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    public static javax.swing.JMenuItem jMenuItem3;
     public static javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    public static javax.swing.JMenuItem jMenuItem5;
+    public static javax.swing.JMenuItem jMenuItem6;
+    public static javax.swing.JMenuItem jMenuItem7;
+    public static javax.swing.JMenuItem jMenuItem8;
+    public static javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public static javax.swing.JTextArea jTextArea1;
     public static javax.swing.JTabbedPane mainTabPane;
     // End of variables declaration//GEN-END:variables
 }
