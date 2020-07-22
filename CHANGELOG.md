@@ -2,6 +2,12 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.3.2
+
+Minor features adding update
+
+- Added 'Open File...'
+
 ## Beta 0.3.1
 
 Bug fix update

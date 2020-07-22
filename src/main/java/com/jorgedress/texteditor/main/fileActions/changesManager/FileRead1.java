@@ -13,14 +13,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 /**
  *
  * @author jorge
  */
-public class FileRead1 {
+public class FileRead1 extends com.jorgedress.texteditor.main.MainFrame {
 
     public static String writtenFile;
     public static String pathToWrittenFile;
@@ -36,7 +39,7 @@ public class FileRead1 {
 //        String file = fileToRead.toString();
 //        System.out.println(file);
             
-            String content;
+
 
         
 
@@ -45,16 +48,25 @@ public class FileRead1 {
     
     public static String readFile(String path) {
         
+        String content = null;
+        
         File file = new File(path);
-        
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FileRead1.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex);
+        if (file.exists()) {
+            try {
+            Scanner fileScanner = new Scanner(file);
+            System.out.println("Reading file: "+file.getName());
+            
+            
+            } catch (FileNotFoundException ex) {
+                System.out.println(ex.getMessage());
+            }
+        } else {
+            System.out.println("Error: File "+file.getName()+" does not exists.");
         }
-        
         return null;
+        
+        
+        
     }
 
 }

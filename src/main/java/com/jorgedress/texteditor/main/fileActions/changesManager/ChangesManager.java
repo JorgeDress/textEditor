@@ -7,7 +7,7 @@ package com.jorgedress.texteditor.main.fileActions.changesManager;
 
 import static com.jorgedress.texteditor.main.MainFrame.*;
 import static com.jorgedress.texteditor.main.MainFrame.mainTabPane;
-import static com.jorgedress.texteditor.main.writerAndReader.FileRead.writtenFile;
+import static com.jorgedress.texteditor.main.writerAndReader.FileRead.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.awt.Component;

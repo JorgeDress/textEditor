@@ -268,6 +268,9 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
+        
+        com.jorgedress.texteditor.main.writerAndReader.FileRead.main(null);
+        
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
