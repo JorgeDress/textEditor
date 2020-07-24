@@ -48,7 +48,7 @@ public class FileRead1 extends com.jorgedress.texteditor.main.MainFrame {
     
     public static String readFile(String path) {
         
-        String content = null;
+        String content = "";
         
         File file = new File(path);
         if (file.exists()) {
@@ -56,7 +56,10 @@ public class FileRead1 extends com.jorgedress.texteditor.main.MainFrame {
             Scanner fileScanner = new Scanner(file);
             System.out.println("Reading file: "+file.getName());
             
-            
+            while (fileScanner.hasNextLine()) {
+                content += fileScanner.nextLine();
+            }
+                System.out.println("Reading file.\nContent: "+content);
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
             }

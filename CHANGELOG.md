@@ -2,6 +2,10 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.4.1
+
+- FIXING Changes Manager
+
 ## Beta 0.4.0
 
 Major Update

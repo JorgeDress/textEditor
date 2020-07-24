@@ -240,7 +240,7 @@ public class MainFrame extends javax.swing.JFrame {
         JTextArea textArea;
         textArea = (JTextArea) (((JViewport) (((JScrollPane) mainTabPane.getComponentAt(currentlySelected)).getViewport()))).getView();
         
-        if (Saved == true) {
+        if (!mainTabPane.getSelectedComponent().getName().startsWith("NewFile")) {
             com.jorgedress.texteditor.main.fileActions.changesManager.ChangesManager.proveSaved(textArea.getText(), com.jorgedress.texteditor.main.fileActions.SaveFile.fixedPath);
         } else {
             com.jorgedress.texteditor.main.fileActions.changesManager.ChangesManager.proveNotSaved();

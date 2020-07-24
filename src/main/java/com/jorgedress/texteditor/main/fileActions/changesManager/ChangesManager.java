@@ -30,6 +30,10 @@ public class ChangesManager {
         String contentOut = com.jorgedress.texteditor.main.fileActions.changesManager.FileRead1.readFile(
                 outFilePath);
         
+        System.out.println("Text in editor: "+inFile);
+        System.out.println("File to read: "+outFilePath);
+        System.out.println("Text in file: "+contentOut);
+        
         if(inFile.equals(contentOut)) {
             System.out.println("The text in the file DOES match with the text in the editor:"
                     + "\nText in the file:\n"+contentOut+"\nText in the editor:\n"+inFile);
