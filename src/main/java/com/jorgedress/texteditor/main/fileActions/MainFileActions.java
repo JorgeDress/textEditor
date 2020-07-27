@@ -29,8 +29,7 @@ public class MainFileActions extends com.jorgedress.texteditor.main.MainFrame im
         if (!Saved) {
 
             int jopResult = JOptionPane.showOptionDialog(null,
-                    "There are not saved changes,\n if you close the file you will lose them.\n"
-                    + "Are you sure do you want to exit?",
+                    "Are you sure do you want to exit?",
                     "Warning",
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.YES_NO_OPTION, null, null, null);

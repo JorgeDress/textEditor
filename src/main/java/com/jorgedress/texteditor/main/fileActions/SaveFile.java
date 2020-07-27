@@ -61,15 +61,12 @@ public class SaveFile {
             
             System.out.println("Selected file name: "+fileName);
             
-            System.out.println("Writing file "+fixedPath);       
+            System.out.println("Writing file "+fileName);       
             
-            
-            System.out.println("To path "+selDirString);
+            System.out.println("To path "+fixedPath);
             
             com.jorgedress.texteditor.main.writerAndReader.FileWrite.main(null);
-            
-            //com.jorgedress.texteditor.main.writer.FileWrite.main(null);
-            
+
         }
         
     }

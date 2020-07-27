@@ -2,7 +2,19 @@
 
 The commit messages with the new features and fixes will be avaible here
 
+## Beta 0.4.2
+
+Major bug fixing and features implementing update:
+
+- FIXING Dark mode
+- Fixed Changes Manager (only for files created on the currently session editor, not for opened files)
+- IMPLEMENTING Google Cloud Platform
+- Fixed console message with unfixed file path (Saving)
+- Completely implemented login and register system
+
 ## Beta 0.4.1
+
+Minur bug fixing update:
 
 - FIXING Changes Manager
 

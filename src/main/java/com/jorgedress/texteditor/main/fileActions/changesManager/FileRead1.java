@@ -49,24 +49,30 @@ public class FileRead1 extends com.jorgedress.texteditor.main.MainFrame {
     public static String readFile(String path) {
         
         String content = "";
-        
+        try {
         File file = new File(path);
+        
         if (file.exists()) {
             try {
             Scanner fileScanner = new Scanner(file);
             System.out.println("Reading file: "+file.getName());
             
-            while (fileScanner.hasNextLine()) {
-                content += fileScanner.nextLine();
-            }
+                while (fileScanner.hasNextLine()) {
+                    content += fileScanner.nextLine();
+                }
                 System.out.println("Reading file.\nContent: "+content);
             } catch (FileNotFoundException ex) {
                 System.out.println(ex.getMessage());
+            } catch (NullPointerException ex) {
+                System.out.println("Error: file didnt saved");
             }
         } else {
             System.out.println("Error: File "+file.getName()+" does not exists.");
         }
-        return null;
+        } catch (NullPointerException ex) {
+            System.out.println("Error: file not saved");
+        }
+        return content;
         
         
         

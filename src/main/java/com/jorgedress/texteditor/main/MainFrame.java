@@ -7,7 +7,6 @@ package com.jorgedress.texteditor.main;
 
 import com.jorgedress.texteditor.main.fileActions.MainFileActions;
 import static com.jorgedress.texteditor.main.fileActions.SaveFile.fixedPath;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -31,6 +30,7 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("Text Editor - v0.4.2-BETA");
         
     }
 
@@ -246,6 +246,9 @@ public class MainFrame extends javax.swing.JFrame {
             com.jorgedress.texteditor.main.fileActions.changesManager.ChangesManager.proveNotSaved();
         }
         
+        if (mainTabPane.getTabCount()==0) {
+            System.exit(0);
+        }
         
         
     }//GEN-LAST:event_jMenuItem3ActionPerformed

@@ -17,10 +17,13 @@ com/jorgedress/texteditor/main/configs/colorChooser$3.class
 com/jorgedress/texteditor/main/configs/config$4.class
 com/jorgedress/texteditor/main/configs/config$5.class
 com/jorgedress/texteditor/main/configs/config$3.class
+com/jorgedress/texteditor/main/configs/themes/ThemeLight.class
 com/jorgedress/texteditor/main/MainFrame$4.class
 com/jorgedress/texteditor/main/fileActions/NewFile.class
 com/jorgedress/texteditor/main/MainFrame$9.class
+com/jorgedress/texteditor/main/configs/themes/ThemeDark.class
 com/jorgedress/texteditor/main/MainFrame$2.class
+com/jorgedress/texteditor/main/configs/config$8.class
 com/jorgedress/texteditor/main/writerAndReader/FileWrite.class
 com/jorgedress/texteditor/main/writerAndReader/FileRead.class
 com/jorgedress/texteditor/main/fileActions/SaveFile.class

@@ -65,4 +65,13 @@
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-Install (-U)</actionName>
+            <displayName>Install (-U)</displayName>
+            <goals>
+                <goal>mvn</goal>
+                <goal>install</goal>
+                <goal>-U</goal>
+            </goals>
+        </action>
     </actions>

@@ -36,9 +36,21 @@ public class NewFile extends com.jorgedress.texteditor.main.MainFrame {
         
         mainTabPane.add(defaultTitle, newFileScr);
         
+        int currentlySelected = mainTabPane.getSelectedIndex();
+        JTextArea textArea;
+        textArea = (JTextArea) (((JViewport) (((JScrollPane) mainTabPane.getComponentAt(currentlySelected)).getViewport()))).getView();
+        
+        JViewport viewPort;
+        viewPort = ((JViewport) (((JScrollPane) mainTabPane.getComponentAt(currentlySelected)).getViewport()));
+        
+        JScrollPane scroll;
+        scroll = (JScrollPane) mainTabPane.getComponentAt(currentlySelected);
         
         System.out.println("Created file with index: "+fileNumber);
-        System.out.println("Default title: "+defaultTitle);
+        System.out.println("Last title (JTextArea): "+textArea.getName());
+        System.out.println("Last title (JViewPort): "+viewPort.getName());
+        System.out.println("Last title (JScrollPane): "+scroll.getName());
+        
         
     }
     
